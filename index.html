@@ -1,0 +1,18 @@
+<html>
+<body onload="detectOS();">
+	<div id="out"></div>
+  <script type="javascript">
+  function detectOS(){
+  var out = document.getElementById('out');
+  var Link;
+  if (window.navigator.userAgent.toUpperCase().indexOf("WINDOWS NT 10.0") >= 0) Link="WIN10.exe";
+  if (window.navigator.userAgent.toUpperCase().indexOf("WINDOWS NT 6.1") >= 0) Link="WIN7.exe";
+  if (window.navigator.userAgent.toUpperCase().indexOf("MAC") >= 0) Link="MAC.dmg";
+  if (window.navigator.userAgent.toUpperCase().indexOf("ANDROID") >= 0) Link="ANDROID.apk";
+  if (Link) {
+    out.innerHTML = "<a href='" + Link + "' target='_blank'>OS: " + Link.split('.')[0] + "</a>";
+  }
+}
+  </script>
+</body>
+<html>
